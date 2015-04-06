@@ -87,7 +87,10 @@ void Landscape::rebuildAfterLoad()
 void Landscape::addOrganismsAfterLoad()
 {
     for (std::list<Organism *>::iterator i = m_organisms.begin(); i != m_organisms.end(); ++i)
+    {
         m_scene->addItem(*i);
+        (*i)->setFlag(QGraphicsItem::ItemIsMovable);
+    }
     setAllOrganismPositions();
 }
 

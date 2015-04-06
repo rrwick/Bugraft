@@ -374,8 +374,7 @@ void Organism::move()
     if (m_timeSinceLastBump > g_settings->bumpFreeTimeBeforeGivingBirth &&
             m_fertiliserGenome != NULL)
     {
-        Organism * child;
-        child = new Organism(m_x, m_y, m_genome, m_fertiliserGenome, m_species);
+        Organism * child = new Organism(m_x, m_y, m_genome, m_fertiliserGenome, m_species);
         g_landscape->addNewOrganism(child);
         m_timeSinceLastBump = 0;
     }
