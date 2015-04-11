@@ -85,6 +85,7 @@ private slots:
     void treeStyleChanged();
     void saveSimulationManual();
     void loadSimulationPrompt();
+    void openAboutDialog();
 };
 
 #endif // MAINWINDOW_H

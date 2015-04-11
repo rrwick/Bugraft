@@ -38,7 +38,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-125</y>
+        <y>-4</y>
         <width>316</width>
         <height>503</height>
        </rect>
@@ -47,7 +47,7 @@
        <item row="7" column="2">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Mean organism lifespan:</string>
+          <string>Mean bug lifespan:</string>
          </property>
         </widget>
        </item>

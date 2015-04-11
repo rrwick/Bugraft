@@ -1,4 +1,4 @@
-//Copyright 2014 Ryan Wick
+//Copyright 2015 Ryan Wick
 
 //This file is part of Bugraft.
 
@@ -16,30 +16,21 @@
 //along with Bugraft.  If not, see <http://www.gnu.org/licenses/>.
 
 
+#include "aboutdialog.h"
+#include "ui_aboutdialog.h"
 
 
-#ifndef INFOTEXTWIDGET_H
-#define INFOTEXTWIDGET_H
-
-#include <QWidget>
-#include <QString>
-
-class InfoTextWidget : public QWidget
+AboutDialog::AboutDialog(QWidget *parent) :
+    QDialog(parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
+    ui(new Ui::AboutDialog)
 {
-    Q_OBJECT
-public:
-    explicit InfoTextWidget(QWidget * parent);
-    explicit InfoTextWidget(QWidget * parent, QString infoTextP);
+    ui->setupUi(this);
 
-    void setInfoText(QString infoTextP);
+    layout()->setSizeConstraint(QLayout::SetFixedSize);
+}
 
-protected:
-    void paintEvent(QPaintEvent *);
-    void mousePressEvent(QMouseEvent * event);
-    
-private:
-    QString infoText;
-    
-};
 
-#endif // INFOTEXTWIDGET_H
+AboutDialog::~AboutDialog()
+{
+    delete ui;
+}

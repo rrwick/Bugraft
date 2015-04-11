@@ -40,7 +40,8 @@ SOURCES += \
     ui/landscapehistorywidget.cpp \
     ui/settingsdialog.cpp \
     ui/waitingdialog.cpp \
-    ui/treegraphicsview.cpp
+    ui/treegraphicsview.cpp \
+    ui/aboutdialog.cpp
 
 HEADERS  += \
     program/globals.h \
@@ -70,13 +71,15 @@ HEADERS  += \
     ui/landscapehistorywidget.h \
     ui/settingsdialog.h \
     ui/waitingdialog.h \
-    ui/treegraphicsview.h
+    ui/treegraphicsview.h \
+    ui/aboutdialog.h
 
 FORMS    += ui/mainwindow.ui \
     ui/landscapeeditdialog.ui \
     ui/organisminfodialog.ui \
     ui/settingsdialog.ui \
-    ui/waitingdialog.ui
+    ui/waitingdialog.ui \
+    ui/aboutdialog.ui
 
 RESOURCES += \
     images/images.qrc

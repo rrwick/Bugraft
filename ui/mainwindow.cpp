@@ -20,6 +20,7 @@
 #include "waitingdialog.h"
 #include <QThread>
 #include "../program/saverandloader.h"
+#include "aboutdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -118,6 +119,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionSimulation_settings, SIGNAL(triggered()), this, SLOT(openSettingsDialog()));
     connect(ui->actionSave_simulation, SIGNAL(triggered()), this, SLOT(saveSimulationManual()));
     connect(ui->actionLoad_simulation, SIGNAL(triggered()), this, SLOT(loadSimulationPrompt()));
+    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(openAboutDialog()));
 }
 
 MainWindow::~MainWindow()
@@ -625,4 +627,18 @@ void MainWindow::finishedLoading()
     m_justSaved = true;
 
     updateTimeDisplay();
+}
+
+
+
+void MainWindow::openAboutDialog()
+{
+    bool simulationRunningAtFunctionStart = simulationIsRunning();
+    stopSimulation();
+
+    AboutDialog aboutDialog(this);
+    aboutDialog.exec();
+
+    if (simulationRunningAtFunctionStart)
+        startSimulation();
 }

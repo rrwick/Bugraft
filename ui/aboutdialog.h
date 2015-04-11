@@ -1,4 +1,4 @@
-//Copyright 2014 Ryan Wick
+//Copyright 2015 Ryan Wick
 
 //This file is part of Bugraft.
 
@@ -16,30 +16,26 @@
 //along with Bugraft.  If not, see <http://www.gnu.org/licenses/>.
 
 
+#ifndef ABOUTDIALOG_H
+#define ABOUTDIALOG_H
 
+#include <QDialog>
 
-#ifndef INFOTEXTWIDGET_H
-#define INFOTEXTWIDGET_H
+namespace Ui {
+class AboutDialog;
+}
 
-#include <QWidget>
-#include <QString>
-
-class InfoTextWidget : public QWidget
+class AboutDialog : public QDialog
 {
     Q_OBJECT
+    
 public:
-    explicit InfoTextWidget(QWidget * parent);
-    explicit InfoTextWidget(QWidget * parent, QString infoTextP);
-
-    void setInfoText(QString infoTextP);
-
-protected:
-    void paintEvent(QPaintEvent *);
-    void mousePressEvent(QMouseEvent * event);
+    explicit AboutDialog(QWidget *parent = 0);
+    ~AboutDialog();
     
 private:
-    QString infoText;
-    
+    Ui::AboutDialog * ui;
 };
 
-#endif // INFOTEXTWIDGET_H
+
+#endif // ABOUTDIALOG_H
