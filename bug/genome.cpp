@@ -73,10 +73,13 @@ QString Genome::getString()
     for (size_t i = 0; i < m_genes.size(); ++i)
     {
         returnString += QString::number(m_genes[i], 'f', 2);
-        if (i == 3 || i == 7 || i == 11)
-            returnString += ",\n";
-        else if (i != m_genes.size() - 1)
-            returnString += ", ";
+        if (i != m_genes.size() - 1)
+        {
+            if (i % 2 == 1)
+                returnString += ",\n";
+            else
+                returnString += ", ";
+        }
     }
     return returnString;
 }

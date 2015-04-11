@@ -16,7 +16,6 @@ OrganismInfoDialog::OrganismInfoDialog(Organism * organism, QWidget * parent) :
     singleOrganismWidget = new SingleOrganismWidget(m_organism, this);
     ui->frame->layout()->addWidget(singleOrganismWidget);
 
-    ui->organismAgeLabel->setText(this->locale().toString(m_organism->getAge()));
     ui->genomeTextLabel->setText(m_organism->m_genome->getString());
     ui->speciesNumberLabel->setText(this->locale().toString(m_organism->m_species->m_speciesNumber));
 }
