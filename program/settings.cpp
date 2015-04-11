@@ -53,9 +53,9 @@ Settings::Settings()
     bumpFreeTimeBeforeGivingBirth = 180.0;
 
     chanceOfMutation = 0.1;
-    maxMutationSize = 0.8;
-    maximumDistanceForMating = 2.0;
-    maximumDistanceForSameSpecies = 3.0;
+    maxMutationSize = 1.8;
+    maximumDistanceForMating = 4.4;
+    maximumDistanceForSameSpecies = 6.7;
 
     chanceOfDriftingOverWater = 0.00001;
     chanceOfDriftingOverAltitude = 0.00001;

@@ -36,7 +36,7 @@ void Genome::randomise()
     m_genes.clear();
 
     for (int i = 0; i < 16; ++i)
-        m_genes.push_back(g_randomNumbers->getRandomInt(20, 25));
+        m_genes.push_back(g_randomNumbers->getRandomDouble(45.0, 55.0));
 }
 
 
@@ -50,8 +50,8 @@ void Genome::perhapsMutate()
                                                       g_settings->maxMutationSize);
         if (m_genes[i] < 0.0)
             m_genes[i] = 0.0;
-        else if (m_genes[i] > 45.0)
-            m_genes[i] = 45.0;
+        else if (m_genes[i] > 99.99)
+            m_genes[i] = 99.99;
     }
 }
 

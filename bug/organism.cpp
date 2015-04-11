@@ -149,25 +149,25 @@ void Organism::paint(QPainter * painter, const QStyleOptionGraphicsItem * /*opti
     painter->rotate(-m_orientationAngle * 57.295779513 + 90);
     painter->scale(scale, scale);
 
-    double width = m_genome->getGene(0) * 8.0 + 20.0;
-    double length = m_genome->getGene(1) * 8.0 + 60.0;
+    double width = m_genome->getGene(0) * 3.6 + 20.0;
+    double length = m_genome->getGene(1) * 3.6 + 60.0;
 
     double top = -length / 2.0;
     double bottom = length / 2.0;
     double left = -width / 2.0;
     double right = width / 2.0;
 
-    double red = m_genome->getGene(2) * 5.0;
-    double green = m_genome->getGene(3) * 5.0;
-    double blue = m_genome->getGene(4) * 5.0;
-    double frontBackSkew = m_genome->getGene(5) / 60.0 + 0.125;
+    double red = m_genome->getGene(2) * 2.25;
+    double green = m_genome->getGene(3) * 2.25;
+    double blue = m_genome->getGene(4) * 2.25;
+    double frontBackSkew = m_genome->getGene(5) / 133.3 + 0.125;
 
     double sidePointY = (top - bottom) * frontBackSkew + bottom;
 
-    double topControlPointSpread = m_genome->getGene(6) * width / 100.0 + 20.0;
-    double bottomControlPointSpread = m_genome->getGene(7) * width / 100.0 + 20.0;
-    double sideControlTopPointSpread = m_genome->getGene(8) * (top - sidePointY) / 100.0 - 25.0;
-    double sideControlBottomSpread = m_genome->getGene(9) * (sidePointY - bottom) / 100.0 - 25.0;
+    double topControlPointSpread = m_genome->getGene(6) * width / 222.2 + 20.0;
+    double bottomControlPointSpread = m_genome->getGene(7) * width / 222.2 + 20.0;
+    double sideControlTopPointSpread = m_genome->getGene(8) * (top - sidePointY) / 222.2 - 25.0;
+    double sideControlBottomSpread = m_genome->getGene(9) * (sidePointY - bottom) / 222.2 - 25.0;
 
 
     QPointF topPoint(0.0, top);
@@ -193,16 +193,16 @@ void Organism::paint(QPainter * painter, const QStyleOptionGraphicsItem * /*opti
 
 
     double eyeY = -length / 4.0;
-    double eyeSize = m_genome->getGene(10) * width / 250.0 + 5.0;
-    double eyeSpacing = m_genome->getGene(11) * width / 200.0 + eyeSize;
+    double eyeSize = m_genome->getGene(10) * width / 555.5 + 5.0;
+    double eyeSpacing = m_genome->getGene(11) * width / 444.4 + eyeSize;
     double leftEyeX = -eyeSpacing;
     double rightEyeX = eyeSpacing;
 
     QPointF leftEyeCentre = QPointF(leftEyeX, eyeY);
     QPointF rightEyeCentre = QPointF(rightEyeX, eyeY);
 
-    double legLength = m_genome->getGene(12) * 2 + width / 2.0 + 5.0;
-    double legAngle = m_genome->getGene(13) / 75.0;
+    double legLength = m_genome->getGene(12) * 0.9 + width / 2.0 + 5.0;
+    double legAngle = m_genome->getGene(13) / 166.6;
     double rightLegAngle = legAngle + walkState * g_settings->walkingLegAngle;
     double leftLegAngle = legAngle - walkState * g_settings->walkingLegAngle;
     double legSpacing = m_genome->getGene(14) * length / 250.0 + 3.0;
@@ -274,9 +274,9 @@ QRectF Organism::boundingRect() const
 {
     double scale = getScale();
 
-    double width = m_genome->getGene(0) * 8.0 + 20.0;
-    double length = m_genome->getGene(1) * 8.0 + 60.0;
-    double legLength = m_genome->getGene(12) * 2 + width / 2.0 + 5.0;
+    double width = m_genome->getGene(0) * 3.6 + 20.0;
+    double length = m_genome->getGene(1) * 3.6 + 60.0;
+    double legLength = m_genome->getGene(12) * 0.9 + width / 2.0 + 5.0;
 
     double maxDimension = std::max(length, legLength * 2.0);
     double scaledBoxSize = maxDimension * scale * 1.2; //The 1.2 is just to add a bit for safety.
