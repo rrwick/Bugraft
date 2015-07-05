@@ -74,12 +74,7 @@ QString Genome::getString()
     {
         returnString += QString::number(m_genes[i], 'f', 2);
         if (i != m_genes.size() - 1)
-        {
-            if (i % 2 == 1)
-                returnString += ",\n";
-            else
-                returnString += ", ";
-        }
+            returnString += ", ";
     }
     return returnString;
 }

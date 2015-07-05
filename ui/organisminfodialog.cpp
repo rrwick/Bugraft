@@ -8,11 +8,6 @@ OrganismInfoDialog::OrganismInfoDialog(Organism * organism, QWidget * parent) :
 {
     ui->setupUi(this);
 
-    QPalette palette = ui->genomeFrame->palette();
-    palette.setColor(backgroundRole(), QColor(255, 255, 255));
-    ui->genomeFrame->setPalette(palette);
-    ui->genomeFrame->setAutoFillBackground(true);
-
     singleOrganismWidget = new SingleOrganismWidget(m_organism, this);
     ui->frame->layout()->addWidget(singleOrganismWidget);
 
