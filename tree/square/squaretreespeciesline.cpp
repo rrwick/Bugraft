@@ -35,6 +35,7 @@ void SquareTreeSpeciesLine::updateSpeciesLine(double height, double width, QPen 
 
     setLine(m_lineX, m_lineStartY, m_lineX, m_lineEndY);
 
+    pen.setCapStyle(Qt::FlatCap);
     setPen(pen);
     m_pen = pen;
     if (m_highlightState == WHOLE_LINE)
