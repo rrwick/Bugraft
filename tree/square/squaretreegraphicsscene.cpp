@@ -175,7 +175,7 @@ QPen SquareTreeGraphicsScene::getTreePen()
     penWidth += g_settings->treeLineThickness * widthOverMinimum / g_settings->treeWidgetMinimumWidth / 3.0;
 
     QPen pen(QBrush(Qt::black), penWidth);
-    pen.setCapStyle(Qt::SquareCap);
+    pen.setCapStyle(Qt::RoundCap);
 
     return pen;
 }

@@ -22,8 +22,9 @@ SquareTreeHorizontalLine::~SquareTreeHorizontalLine()
 void SquareTreeHorizontalLine::updateHorizontalLine(double height, double width, QPen pen)
 {
 
-    double lineStartX = m_branches.front()->m_xFraction * width;
-    double lineEndX = m_branches.back()->m_xFraction * width;
+    //I'm not sure why "- 0.3" is needed, but it does seem to make things line up better.
+    double lineStartX = m_branches.front()->m_xFraction * width - 0.3;
+    double lineEndX = m_branches.back()->m_xFraction * width - 0.3;
     double lineY = height - m_branches.front()->m_startStep * g_settings->treeStepHeight;
 
     setLine(lineStartX, lineY, lineEndX, lineY);
