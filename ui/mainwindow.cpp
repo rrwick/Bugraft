@@ -286,7 +286,7 @@ void MainWindow::resetSimulation()
 {
     stopSimulation();
 
-    if (g_landscape->populationIsNotExtinct() && g_landscape->m_elapsedTime > 0)
+    if (g_landscape->populationIsNotExtinct() && g_landscape->m_elapsedTime > 0 && !m_justSaved)
     {
         if (QMessageBox::No == QMessageBox::question(this, "Reset simulation?", "Are you sure you want to\n"
                                                            "reset the current simulation?\n\n"
