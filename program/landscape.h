@@ -9,7 +9,7 @@
 #include <QColor>
 #include <QGraphicsScene>
 
-#include "libnoise/noise.h"
+#include "../libnoise/noise.h"
 #include "../bug/organism.h"
 #include "globals.h"
 #include "../bug/species.h"
