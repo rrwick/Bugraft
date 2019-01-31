@@ -52,6 +52,7 @@ protected:
 private:
     Ui::MainWindow *ui;
     GraphicsViewZoom * m_graphicsViewZoom;
+    double m_previousZoomSpinBoxValue;
     QTimer m_timer;
     bool m_resumeSimulationAfterSave;
     QString m_autosavePath;
@@ -64,6 +65,7 @@ private:
     void saveSimulationAutomatic();
     void saveSimulation(QString fullFileName, QString message);
     void loadSimulation(QString fullFileName);
+    void setZoomSpinBoxStep();
 
 public slots:
     void finishedSaving();

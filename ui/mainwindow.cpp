@@ -60,6 +60,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->simulationHiddenLabel->setFont(g_extraLargeFont);
     ui->simulationHiddenLabel->setVisible(false);
 
+    m_previousZoomSpinBoxValue = ui->zoomSpinBox->value();
     ui->zoomSpinBox->setMaximum(g_settings->maxZoom * 100.0);
     ui->zoomSpinBox->setMinimum(g_settings->minZoom * 100.0);
 
@@ -161,10 +162,22 @@ void MainWindow::simulationSpeedChanged()
 
 void MainWindow::zoomSpinBoxChanged()
 {
-    double zoomFactor = (ui->zoomSpinBox->value() / 100.0) / g_zoom;
+    double newValue = ui->zoomSpinBox->value();
+    double zoomFactor = newValue / m_previousZoomSpinBoxValue;
+    setZoomSpinBoxStep();
 
-    m_graphicsViewZoom->gentle_zoom(zoomFactor, false);
+    m_graphicsViewZoom->gentle_zoom(zoomFactor, SPIN_BOX);
     zoomedWithMouseWheel();
+}
+
+void MainWindow::setZoomSpinBoxStep()
+{
+    double newSingleStep = ui->zoomSpinBox->value() * (g_settings->zoomFactor - 1.0) * 100.0;
+
+    //Round up to nearest 0.1
+    newSingleStep = int((newSingleStep + 0.1) * 10.0) / 10.0;
+
+    ui->zoomSpinBox->setSingleStep(newSingleStep);
 }
 
 void MainWindow::zoomedWithMouseWheel()
@@ -172,6 +185,8 @@ void MainWindow::zoomedWithMouseWheel()
     ui->zoomSpinBox->blockSignals(true);
     double newSpinBoxValue = g_zoom * 100.0;
     ui->zoomSpinBox->setValue(newSpinBoxValue);
+    setZoomSpinBoxStep();
+    m_previousZoomSpinBoxValue = newSpinBoxValue;
     ui->zoomSpinBox->blockSignals(false);
 }
 

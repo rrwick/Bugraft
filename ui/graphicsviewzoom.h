@@ -41,7 +41,7 @@ class GraphicsViewZoom : public QObject {
     Q_OBJECT
 public:
     GraphicsViewZoom(QGraphicsView* view);
-    void gentle_zoom(double factor, bool mouseWheel);
+    void gentle_zoom(double factor, ZoomSource zoomSource);
     void set_modifiers(Qt::KeyboardModifiers modifiers);
 
 private:

@@ -7,6 +7,7 @@
 enum GroundType {WATER, HABITABLE, HIGH_ALTITUDE, OUT_OF_BOUNDS};
 enum SpeciesState {CURRENT, EXTINCT, SPLIT};
 enum HighlightState {WHOLE_LINE, PARTIAL_LINE, NO_HIGHLIGHT};
+enum ZoomSource {MOUSE_WHEEL, SPIN_BOX, KEYBOARD, GESTURE};
 
 extern double g_zoom;
 
