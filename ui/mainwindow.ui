@@ -854,7 +854,7 @@ landscape and species history.</string>
      <x>0</x>
      <y>0</y>
      <width>1502</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -953,6 +953,10 @@ landscape and species history.</string>
    </property>
   </action>
   <action name="actionEdit_landscape">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/icons/settings-256.png</normaloff>:/icons/settings-256.png</iconset>
+   </property>
    <property name="text">
     <string>Edit landscape</string>
    </property>
