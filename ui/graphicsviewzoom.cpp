@@ -66,6 +66,13 @@ bool GraphicsViewZoom::eventFilter(QObject *object, QEvent *event) {
                 return true;
             }
         }
+    } else if (event->type() == QEvent::NativeGesture) {
+        QNativeGestureEvent * gestureEvent = static_cast<QNativeGestureEvent *>(event);
+        if (gestureEvent->gestureType() == Qt::ZoomNativeGesture) {
+            double factor = 1.0 + gestureEvent->value();
+            gentle_zoom(factor, false);
+            return true;
+        }
     }
     Q_UNUSED(object)
     return false;
