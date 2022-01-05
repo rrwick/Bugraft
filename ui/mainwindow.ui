@@ -167,7 +167,6 @@
         <widget class="QLabel" name="timeLabel2">
          <property name="font">
           <font>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -470,7 +469,17 @@ the simulation run.</string>
          </widget>
         </item>
         <item>
-         <widget class="TreeGraphicsView" name="treeGraphicsView"/>
+         <widget class="TreeGraphicsView" name="treeGraphicsView">
+          <property name="backgroundBrush">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>255</red>
+             <green>255</green>
+             <blue>255</blue>
+            </color>
+           </brush>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QWidget" name="widget_4" native="true">
@@ -854,7 +863,7 @@ landscape and species history.</string>
      <x>0</x>
      <y>0</y>
      <width>1502</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
