@@ -55,8 +55,8 @@ bool GraphicsViewZoom::eventFilter(QObject *object, QEvent *event) {
     } else if (event->type() == QEvent::Wheel) {
         QWheelEvent* wheel_event = static_cast<QWheelEvent*>(event);
         if (QApplication::keyboardModifiers() == _modifiers) {
-            if (wheel_event->orientation() == Qt::Vertical) {
-                double angle = wheel_event->angleDelta().y();
+            double angle = wheel_event->angleDelta().y();
+            if (angle != 0.0) {
                 double factor = qPow(g_settings->zoomFactor, angle);
                 gentle_zoom(factor, MOUSE_WHEEL);
                 return true;

@@ -5,7 +5,8 @@
 #include "settings.h"
 #include <utility> //std::pair
 #include "../ui/mainwindow.h"
-#include <algorithm>    // std::random_shuffle
+#include <algorithm> // std::shuffle
+#include <random> // std::mt19937
 
 
 Landscape::Landscape(QGraphicsScene * scene) :
@@ -631,7 +632,8 @@ void Landscape::checkOneSpeciesForSplit(std::list<Organism *> list1, bool called
         //from the larger group.  This will make the tree unbalanced, as left
         //branches will typically contain more organisms than right branches.
         //To combat this, we now shuffle the order of the child species.
-        std::random_shuffle(parentSpecies->m_childSpecies.begin(), parentSpecies->m_childSpecies.end());
+        std::mt19937 rng(std::time(nullptr));
+        std::shuffle(parentSpecies->m_childSpecies.begin(), parentSpecies->m_childSpecies.end(), rng);
     }
 }
 

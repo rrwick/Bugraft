@@ -176,7 +176,9 @@ win32:LIBS += -L$$PWD/../boost_1_55_0/lib64-msvc-12.0/
 win32:RC_FILE = images/myapp.rc
 
 macx:INCLUDEPATH += /usr/local/include/
+macx:INCLUDEPATH += /opt/homebrew/include
 macx:LIBS += -L/usr/local/lib
+macx:LIBS += -L/opt/homebrew/lib
 macx:LIBS += -lboost_iostreams
 macx:LIBS += -lboost_serialization
 macx:ICON = images/application.icns
