@@ -182,4 +182,4 @@ macx:LIBS += -L/opt/homebrew/lib
 macx:LIBS += -lboost_iostreams
 macx:LIBS += -lboost_serialization
 macx:ICON = images/application.icns
-macx:QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.7
+macx:QMAKE_MACOSX_DEPLOYMENT_TARGET = 11.0
